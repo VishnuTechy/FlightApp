@@ -15,16 +15,21 @@ export default function App() {
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
   const [departureDate, setDepartureDate] = useState('');
-
+  const resetFilters = () => {
+    setSortKey('price-asc');
+    setMaxPrice(maxFlightPrice);
+    setQuery('');
+    setFrom('');
+    setTo('');
+    setDepartureDate('');
+  };
   const filtered = useMemo(() => {
     let arr = data.filter(f => f.price <= Number(maxPrice));
 
     if (query.trim()) {
       const q = query.trim().toLowerCase();
       arr = arr.filter(f =>
-        f.airline.toLowerCase().includes(q) ||
-        f.from.toLowerCase().includes(q) ||
-        f.to.toLowerCase().includes(q)
+        f.airline.toLowerCase().includes(q)
       );
     }
 
@@ -68,7 +73,7 @@ export default function App() {
             <div className="right-controls" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <div className="search">
                 <input
-                  placeholder="Search airline, from, to"
+                  placeholder="Search airline"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                 />
@@ -80,7 +85,7 @@ export default function App() {
                   min={minFlightPrice}
                   max={maxFlightPrice}   // dynamically set
                   value={maxPrice}
-                  onChange={(e) => setMaxPrice(e.target.value)}
+                  onChange={(e) => setMaxPrice(Number(e.target.value))}
                 />
                 <div className="price-value">KWD {maxPrice}</div>
               </div>
@@ -100,7 +105,9 @@ export default function App() {
               value={departureDate}
               onChange={(e) => setDepartureDate(e.target.value)}
             />
-
+            <button className="reset-btn" onClick={resetFilters}>
+              Reset Filters
+            </button>
           </div>
         </section>
 

@@ -1,11 +1,4 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 28px;
-  background: linear-gradient(90deg, #0ea5e9, #10b981);
-  color: #fff;
-}
+
 
 /* .logo {
   height: 34px;
@@ -25,6 +18,7 @@
   color: #fff;
   font-weight: 500;
   transition: opacity 0.2s;
+    margin-right:20px;
 }
 
 .header-nav a:hover {
@@ -75,3 +69,63 @@
   font-weight: bold;
   color: #ffffff;
 }
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .header-right {
+    position: relative;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide nav by default */
+  .header-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;  /* adjust based on header height */
+    right: 0;
+    background: linear-gradient(90deg, #0ea5e9, #10b981);
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+
+  /* Show nav when menuOpen = true */
+.header-nav.open {
+  display: flex;
+  flex-direction: column;
+}
+
+  .header-nav a, 
+  .header-nav span {
+    margin: 8px 0;
+    font-size: 16px;
+  }
+}
+
+.dropdown-footer {
+  background: #007bff;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 12px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  align-items: center;
+}
+
