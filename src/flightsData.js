@@ -1,0 +1,58 @@
+export const flightsData = [
+  {
+    id: 1,
+    airline: 'Etihad Airways',
+    logo: '/etihad.svg',
+    from: 'singapore (COK)',
+    to: 'malaysia (DXB)',
+    originalPrice: 100,
+    price: 80,
+    duration: 215,
+    departure: '05:45',
+    arrival: '09:20',
+    departureDate: 'Thu Jun 25 2023',
+    arrivalDate: 'Thu Jun 25 2023',
+  },
+  {
+    id: 2,
+    airline: 'Emirates',
+    logo: '/emirates.svg',
+    from: 'Cochin (COK)',
+    to: 'Dubai (DXB)',
+    price: 120,
+    originalPrice: 200,
+arrivalDate: 'Thu Jun 25 2023',
+    duration: 200,
+    departure: '08:00',
+    arrival: '11:20',
+    departureDate: 'Thu Jun 25 2023'
+  },
+  {
+    id: 3,
+    airline: 'Air India Express',
+    logo: '/airindia.svg',
+    from: 'Cochin (COK)',
+    to: 'Dubai (DXB)',
+    price: 95,
+    originalPrice: 120,
+arrivalDate: 'Thu Jun 25 2023',
+    duration: 230,
+    departure: '06:10',
+    arrival: '10:00',
+    departureDate: 'Thu Jun 25 2023'
+  },
+  {
+    id: 4,
+    airline: 'IndiGo',
+    logo: '/indigo.svg',
+    from: 'Cochin (COK)',
+    to: 'Dubai (DXB)',
+    price: 70,
+    originalPrice: 90,
+arrivalDate: 'Thu Jun 25 2023',
+    duration: 240,
+    departure: '07:00',
+    arrival: '11:00',
+    departureDate: 'Thu Jun 25 2023'
+  }
+];
